@@ -4,6 +4,9 @@ public class Main {
 
     if (args[0].equals("todo")) {
       printUsageInformation();
+      if (args[0].equals("todo") && args[1].equals("-l")){
+        printTasksList();
+      }
     }
   }
 
@@ -15,5 +18,9 @@ public class Main {
         + "\t-a   Adds a new task\n"
         + "\t-r   Removes an task\n"
         + "\t-c   Completes an task");
+  }
+
+  private static void printTasksList() {
+
   }
 }
