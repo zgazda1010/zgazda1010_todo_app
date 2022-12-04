@@ -6,9 +6,17 @@ public class Todo {
 
   private int taskNumber;
 
+  private boolean checked;
+
   public Todo(String taskName, int taskNumber) {
     this.taskName = taskName;
     this.taskNumber = taskNumber;
+  }
+
+  public Todo(String taskName, int taskNumber, boolean checked) {
+    this.taskName = taskName;
+    this.taskNumber = taskNumber;
+    this.checked = false;
   }
 
   public String getTaskName() {
@@ -27,9 +35,27 @@ public class Todo {
     this.taskNumber = taskNumber;
   }
 
+  public boolean isChecked() {
+    return checked;
+  }
+
+  public Todo readLineFromFile(String line) {
+    String text = line.substring(4);
+    boolean checked = text.startsWith("[x] ");
+    return new Todo(text, taskNumber, checked);
+  }
+
+  public void setChecked() {
+    this.checked = true;
+  }
+
   @Override
   public String toString() {
     return (taskNumber + " - " + taskName);
+  }
+
+  public String toCheckedString() {
+    return taskNumber + " - [" + (checked ? "x" : " ") + "] " + taskName;
   }
 
   public void printAllFields() {

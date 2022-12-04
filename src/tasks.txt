@@ -1,4 +1,4 @@
-Walk the dog
-Buy milk
-Get a haircut
-Feed the monkey
+1 - [ ] Walk the dog
+2 - [x] Buy milk
+3 - [ ] Feed the monkey
+4 - [ ] Feed the monkey
